@@ -30,12 +30,13 @@
     <div id="intro_web">
         <div class="back_right">
             <img src="./assets/webname-removebg-preview.png" alt="" class="img_web_name">
-            <img src="./assets/CVtext-removebg-preview.png" alt="" class="img_web_name_CV">
-            <!-- <img src="./assets/sloganvang-removebg-preview.png" alt="" class="slogan_web">
+            <img src="./assets/CV-removebg-preview.png" alt="" class="img_web_name_CV">
+            <img src="./assets/haoquang-removebg-preview.png" alt="" class="light img_web_name_CV">
+            <img src="./assets/slogando-removebg-preview.png" alt="" class="slogan_web">
             <input class="input_name" type="text" placeholder="Type your name" value="">
             <input class="input_prof" type="text" placeholder="type apply position" value="">
             <input type="submit" class="button button_submit" value="start">
-            <p>Develop by HKT - HacKẻ Team</p> -->
+            <p>Develop by HKT - HacKẻ Team</p>
         </div>
     </div>
 
@@ -43,8 +44,9 @@
     <div id="content">
 
         <!-- bang lua chon 1 -->
-        <!-- <div class="table_1"> -->
-
+        <div class="table_1">
+            <input type="submit" value="Continue to edit" class="continue_button">
+            <i class="fas fa-arrow-right"></i>
         </div>
 
         <!-- CV -->
@@ -63,7 +65,7 @@
                 <div id="CV_intro">
 
                     <div class="picture_user">
-                        <img src="./assets/default-avatar.png" alt="">
+                        <img class="user_img" src="./assets/default-avatar.png" alt="">
                     </div>
 
                     <div class="hafl_cicle"></div>
@@ -198,6 +200,87 @@
             </div>
 
         </div>
+
+    <!-- bang chinh sua -->
+    <div id="table_add_infor">
+        <div class="nav_bar">
+            <img src="./assets/webname-removebg-preview.png" alt="" class="CV_name_nav">
+            <img src="./assets/CV-removebg-preview.png" alt="" class="CV_CV_name">
+            <input type="submit" class="button_nav review_cv" value="review">
+            <input type="submit" class="button_nav print_cv" value="print">
+        </div>
+
+        <div class="form_add">
+            <div class="form_add_picture">
+                <div class="block_file_up">
+                    <label class="custom-file-upload">
+                        <input class="form_choose" type='file' onchange="readURL(this);" accept="image/*"/>
+                        <i class="fas fa-image"></i>
+                    </label>
+                </div>
+                <h5 class="title_add_form">Add your image</h5>
+                <div class="line_decor_yellow picture_line"></div>
+            </div>
+            <div class="form_add_ele form_add_name">
+                <h6>Name</h6>
+                <input type="text" value="" class="name input_name_infor" maxlength="27">
+                <div class="line_decor_yellow"></div> 
+            </div>
+            <div class="form_add_ele form_add_position">
+                <h6>Position</h6>
+                <input type="text" value="" class="position input_name_infor" >
+                <div class="line_decor_yellow"></div> 
+            </div>
+            <div class="form_add_ele form_add_intro">
+                <h6>Intro</h6>
+                <input type="text" value="" class="intro input_name_infor" maxlength="411">
+                <div class="line_decor_yellow"></div> 
+            </div>
+            <div class="form_add_ele form_add_contact">
+                <h6>CONTACT</h6>
+                <div class="add_contact">
+                    <h6>Email</h6>
+                    <input type="email" value="" class="email input_contact_infor" maxlength="30">
+                    <div class="line_decor_yellow"></div> 
+                </div>
+                <div class="add_contact">
+                    <h6>Phone</h6>
+                    <input type="number" value="" class="numberPhone input_contact_infor" maxlength="22">
+                    <div class="line_decor_yellow"></div>
+                </div>
+                <div class="add_contact">
+                    <h6>Day of birth</h6>
+                    <input type="text" value="" class="DoB input_contact_infor" maxlength="12">
+                    <div class="line_decor_yellow"></div>
+                </div>
+                <div class="add_contact">
+                    <h6>Address</h6>
+                    <input type="text" value="" class="addresss input_contact_infor" maxlength="64">
+                    <div class="line_decor_yellow"></div>
+                </div>
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add Experience</H4></div>
+                <input type="text" class="add_infor_input">
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add Education</H4></div>
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add project</H4></div>
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add Certificates</H4></div>
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add Achiements</H4></div>
+            </div>
+            <div class="form_add_ele form_add_element">
+                <div class="button_submit_add"><H4>Add Skills</H4></div>
+            </div>
+        </div>
+            
+    </div>
 
     </div>
 
