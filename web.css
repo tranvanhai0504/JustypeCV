@@ -10,6 +10,7 @@ html{
     /* zoom: 67%; */
 }
 
+
 body{
     width: 100%;
     height: 100%;
@@ -63,6 +64,7 @@ body{
     font-size: 25px;
 }
 
+
 /* phan nen den intro cua web */
 
 #intro_web{
@@ -75,6 +77,7 @@ body{
 }
 
 #intro_web .back_right{
+    display: none;
     height: 57%;
     width: 35%;
     position: absolute;
@@ -83,6 +86,12 @@ body{
     border-radius: 40px;
     text-align: center;
     padding-top: 10px;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+
 }
 
 #intro_web .img_web_name{
@@ -103,12 +112,15 @@ body{
 }
 
 .light{
+
+    height: 123px;
+    animation: spin 1s ease-in-out infinite both;
     z-index: 0;
 }
 
 #intro_web .slogan_web{
     position: absolute;
-    top: 180px;
+    top: 230px;
     right: 75px;
     width: 350px;
 }
@@ -180,41 +192,11 @@ body{
     margin-left: 20px;
 }
 
-/* bang lua chon 1 */
-
-#content .table_1{
-    display: none;
-    position: absolute;
-    top: 12px;
-    right: 50px;
-    background-color: #fff;
-    width: 400px;
-    height: 150px;
-    border-radius: 50px;
-    z-index: 5;
-}
-
-#content .continue_button{
-    display: none;
-    width: 250px;
-    height: 75px;
-    background-color: #8bd33f;
-    border-radius: 40px;
-    border: unset;
-    cursor: pointer;
-    color: #fff;
-    font-size: 30px;
-}
-
-#content .continue_button:hover{
-    background-color: #74c51e;
-    color: #fff;
-}
 
 /* CV */
 #CV{
-    display: block;
-    position: relative;
+    display: block ;
+    position: relative ;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -384,7 +366,7 @@ body{
     width: 90%;
     max-height: 143px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     margin: 5%;
     margin-top: 3%;
     text-align: center;
@@ -477,6 +459,10 @@ body{
     text-shadow: 0.3px 0.3px #000;
 }
 
+#CV_exper .CV_exper_informations li h1{
+    font-size: 15px;
+}
+
 /* phần ô thông tin bên phải */
 
 .box_button{
@@ -524,7 +510,7 @@ body{
 #CV_infor .tangle_decor{
     width: 60px;
     height: 60px;
-    left: -16px;
+    left: -10px;
     top: 19px;
 }
 
@@ -536,23 +522,23 @@ body{
 }
 
 #CV_infor .square_decor{
-    left: 390px;
-    top: 57px;
+    right: 3px;
+    top: 47px;
     width: 60px;
     height: 60px;
 }
 
 #CV_infor .tangle_decor_under{
-    left: 389px;
-    top: 1037px;
+    right: 5px;
+    bottom: 15px;
     width: 60px;
     height: 60px;
-    transform: rotate(55deg);
+    transform: rotate(58deg);
 }
 
 #CV_infor .square_decor_under{
-    left: 49px;
-    top: 1047px;
+    left: 9px;
+    bottom: 8px;
     width: 60px;
     height: 60px;
 }
@@ -644,6 +630,10 @@ body{
     line-height: 20px;
 }
 
+.main_information .infor_user .CV_exper_informations h1{
+    font-size: 15px;
+}
+
 /* bang nhap va chinh sua thong tin */
 
 #table_add_infor{
@@ -658,39 +648,50 @@ body{
 }
 
 #table_add_infor .nav_bar{
+    padding-top: 6px;
+    justify-content: space-evenly;
+    display: flex;
     position: fixed;
-    width: 34.14%;
+    width: 34.5%;
     height: 65px;
     background-color: #FF7A01;
     z-index: 5;
+    border: solid 2px rgb(77, 75, 75);
+    border-top: unset;
+    border-left: unset;
+    border-radius: 0 6px 12px 6px;
 }
 
 #table_add_infor .CV_name_nav{
-    margin: 14px 0 14px 14px;
-    width: 70px;
-    height: 30px;
+    padding-bottom: 30px;
+    width: 120px;
+    height: 80px;
 }
 
 #table_add_infor .CV_CV_name{
     position: absolute;
-    top: 12px;
-    left: 82px;
+    top: 35px;
+    left: 130px;
     width: 27px;
     height: 20px;
 }
 
 #table_add_infor .nav_bar .button_nav{
-    position: absolute;
-    top: 8px;
-    line-height: 65px;
+    display: flex;
+    justify-content: center;
     margin-left: 30px;
-    width: 30%;
+    padding-top: 6px;
+    width: 25%;
     height: 50px;
     border-radius: 30px;
     text-align: center;
-    line-height: 50px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.fa-eye,
+.fa-print{
+    font-size: 30px;
 }
 
 #table_add_infor .nav_bar .print_cv{
@@ -742,15 +743,17 @@ body{
 }
 
 .form_add .form_add_picture .block_file_up .fa-image{
-    position: absolute;
+    /* position: absolute;
     left: 50px;
-    top: 115px;
+    top: 115px; */
     font-size: 50px;
     cursor: pointer;
 }
 
 .form_add .form_add_picture .block_file_up{
-    display: inline-block;
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
     margin-top: 40px;
     cursor: pointer;
     background-color: #ffd011;
@@ -767,11 +770,17 @@ body{
     top: 136px;
     font-size: 18px;
     z-index: 0;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
 .line_decor_yellow{
+    border-radius: 20px;
     width: 71%;
-    height: 3px;
+    height: 5px;
     background-color: #ffd011;
 }
 
@@ -785,6 +794,19 @@ h6{
     margin-top: 60px !important;
     font-size: 18px;
     margin-top: 20px;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+
+}
+
+.name_img{
+    position: absolute;
+    margin: unset;
+    width: 200px;
+    height: 200px;
 }
 
 .input_name_infor{
@@ -806,6 +828,11 @@ h6{
 }
 
 .form_add_contact .add_contact h6{
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
     font-size: 14px;
 }
 
@@ -824,15 +851,26 @@ h6{
     height: 50px;
     background-color: #ffd011;
     border-radius: 3px;
-    box-shadow: -2px 2px 5px rgb(136, 3, 3);
+    box-shadow: -2px 2px 5px #000;
     cursor: pointer;
     color: #000;
     font-size: 20px;
     text-align: center;
 }
 
+.button_submit_add:hover{
+    -webkit-animation: shadow-pop-bl 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: shadow-pop-bl 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+
 .button_submit_add>h4{
     line-height: 50px;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
 .form_add:last-child{
@@ -840,9 +878,131 @@ h6{
 }
 
 
+.add_infor_input{
+    display: none;
+    padding-left: 20px;
+    border: solid 2px #ffd011;
+    border-top: unset;
+    border-right: unset;
+    margin-top: 30px;
+    font-size: 14px;
+    width: 70%;
+    height: 45px;
+    outline: unset;
+}
 
+.add_infor_input_title{
+    display: none;
+    border: unset;
+    padding-left: 20px;
+    border-bottom: solid 2px #ffd011;
+    margin-top: 30px;
+    font-size: 14px;
+    height: 35px;
+    outline: unset;
+    width: 70%;
+}
 
+.add_infor_button{
+    display: none;
+    border: unset;
+    outline: unset;
+    width: 20%;
+    height: 30px;
+    margin-left: 250px;
+    margin-top: 25px;
+    background-color: #ffd011;
+    border-radius: 3px;
+    box-shadow: -2px 2px 5px #000;
+    cursor: pointer;
+}
 
+.add_infor_button:hover{
+    -webkit-animation: shadow-drop-2-bl 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: shadow-drop-2-bl 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.tag_add{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 70%;
+    min-height: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    margin-top: 25px;
+    padding: 5px 0 5px 20px;
+    box-shadow: 1px 1px 3px #000;
+    opacity: 0.7;
+    resize: vertical;
+}
+
+.tag_add:hover{
+    box-shadow: 1px 1px 3px rgb(95, 92, 92);
+    opacity: 1;
+}
+
+.tag_add>h1{
+    margin: auto 0;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.tag_add i{
+    margin: auto 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.tag_add i:hover{
+    opacity: 1;
+}
+
+.button_turnback{
+    padding-left: 50px;
+    position: fixed;
+    flex-direction: column;
+    top: -52px;
+    left: -25%;
+    display: none;
+    z-index: 20;
+    width: 25%;
+    height: 109%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button_turnback:hover{
+    background-color: rgba(87, 80, 80, 0.199);
+}
+
+.button_turnback_real{
+    display: none;
+    position: absolute;
+    top: 45%;
+    right: -50px;
+    display: block;
+    width: 50px;
+    height: 70px;
+    border-radius: 0 50px 50px 0;
+    background-color: rgba(87, 80, 80, 0.199);;
+}
+
+.fa-angle-right{
+    font-size: 90px;
+    line-height: 70px !important;
+}
+
+.title_turnback{
+    opacity: 0.5;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.411);
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
 
 
 
@@ -859,14 +1019,24 @@ h6{
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #FF7A01;
     border-radius: 10px;
     
   }
 
 
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 @-webkit-keyframes bounce-out-top {
     0% {
@@ -985,3 +1155,753 @@ h6{
       opacity: 0;
     }
   }
+
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+.color-change-5x {
+	-webkit-animation: color-change-5x 5s linear infinite alternate both;
+	        animation: color-change-5x 5s linear infinite alternate both;
+}
+
+ @-webkit-keyframes color-change-5x {
+    0% {
+      background: #19dcea;
+    }
+    25% {
+      background: #b22cff;
+    }
+    50% {
+      background: #ea2222;
+    }
+    75% {
+      background: #f5be10;
+    }
+    100% {
+      background: #3bd80d;
+    }
+  }
+  @keyframes color-change-5x {
+    0% {
+      background: #19dcea;
+    }
+    25% {
+      background: #b22cff;
+    }
+    50% {
+      background: #ea2222;
+    }
+    75% {
+      background: #f5be10;
+    }
+    100% {
+      background: #3bd80d;
+    }
+  }
+
+
+.jello-horizontal:hover {
+	-webkit-animation: jello-horizontal 0.9s both;
+	        animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes jello-horizontal {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+
+  
+  
+ /* ----------------------------------------------
+ * Generated by Animista on 2021-12-2 20:44:9
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-down-center
+ * ----------------------------------------
+ */
+
+.scale-down-center {
+	-webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-down-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.65);
+              transform: scale(0.65);
+    }
+  }
+  @keyframes scale-down-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(0.65);
+              transform: scale(0.65);
+    }
+  }
+   
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-2 21:38:36
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shadow-pop-bl
+ * ----------------------------------------
+ */
+ @-webkit-keyframes shadow-pop-bl {
+    0% {
+      -webkit-box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000;
+              box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+              box-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
+  @keyframes shadow-pop-bl {
+    0% {
+      -webkit-box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000;
+              box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000, 0 0 #000;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+              box-shadow: -1px 1px #000, -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
+  
+
+  /* ----------------------------------------------
+ * Generated by Animista on 2021-12-2 22:47:21
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shadow-drop-2-bl
+ * ----------------------------------------
+ */
+@-webkit-keyframes shadow-drop-2-bl {
+    0% {
+      -webkit-transform: translateZ(0) translateX(0) translateY(0);
+              transform: translateZ(0) translateX(0) translateY(0);
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translateZ(25px) translateX(6px) translateY(-6px);
+              transform: translateZ(25px) translateX(6px) translateY(-6px);
+      -webkit-box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.85);
+              box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.85);
+    }
+  }
+  @keyframes shadow-drop-2-bl {
+    0% {
+      -webkit-transform: translateZ(0) translateX(0) translateY(0);
+              transform: translateZ(0) translateX(0) translateY(0);
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translateZ(25px) translateX(6px) translateY(-6px);
+              transform: translateZ(25px) translateX(6px) translateY(-6px);
+      -webkit-box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.85);
+              box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.85);
+    }
+  }
+ 
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}  
+  
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-3 1:9:12
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+.class_in{
+    left: unset !important;
+    display: block;
+    margin: auto;
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+    box-shadow: unset !important;
+    box-sizing: border-box;
+    width: 21cm;
+    height: 29.7cm;
+    background-color: blanchedalmond;
+    z-index: 0;
+}
+
+  
+ @media print {
+     #intro_web, #table_add_infor, .button_turnback{
+         position: unset;
+         display: none !important;
+     }
+
+     .background_cv{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    body{
+        background-image: unset;
+        background-repeat: unset;
+        background-size: unset;
+        background-position: unset;
+        background-attachment: unset;
+    }
+
+    /* CV */
+    #CV{
+        left: unset !important;
+        display: block;
+        margin: auto;
+        box-sizing: border-box;
+        width: 21cm;
+        height: 29.7cm;
+        background-color: blanchedalmond;
+        z-index: 0;
+    }
+    
+    .block1, .block2, .block4{
+        background-color: rgba(255, 122, 1, 1);
+        border: solid 2px rgba(83, 4, 115, 1);
+    }
+    
+    .block1, .block3{
+        width: 71.4%;
+    }
+    
+    .block2, .block4{
+        width: 28.6%;
+    }
+    
+    .block1, .block2{
+        height: 33.8%;
+    }
+    
+    .block3, .block4{
+        height: 66.2%;
+    }
+    
+    .block3{
+        background-color: rgba(177, 156, 255, 1);
+        border: solid 2px rgba(83, 4, 115, 1);
+    }
+    
+    .block1{
+        border-right: unset;
+    }
+    
+    .block2{
+        border-left: unset;
+        border-bottom: unset;
+    }
+    
+    .block4{
+        border-top: unset;
+    }
+    
+    
+    /* Thông tin trong CV */
+    #CV_information{
+        position: absolute;
+        left: 0;
+        top:0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    #CV #CV_information{
+        z-index: 2;
+    }
+    
+    #CV_intro, #CV_exper{
+        height: 50%;
+        width: 40%;
+    }
+    
+    #CV_infor{
+        height: 100%;
+        width: 60%;
+    }
+    
+    /* phần ô giới thiệu */
+    
+    #CV_intro{
+        position: relative;
+        padding-left: 30px;
+        padding-top: 50px;
+    }
+    
+    .picture_user{
+        position: absolute;
+        top: 33px;
+        left: 128px;
+        display: inline-block;
+        background-color: #000;
+        height: 96px;
+        width: 96px;
+        border-radius: 301px;
+        z-index: 6;
+        justify-content: center;
+    }
+    
+    .picture_user img{
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        height: 90px;
+        width: 90px;
+        border-radius: 301px;
+    }
+    
+    
+    .hafl_cicle{
+        position: absolute;
+        left: 151px;
+        top: 63px;
+        width: 46px;
+        height: 102px;
+        border-radius: 64px 0 0 64px;
+        background:#FF7A01;
+        box-shadow: inset 2px 5px 5px #000000;
+        transform: rotate(270deg);
+        z-index: 5;
+    }
+    
+    #add_size{
+        width: 100%;
+        height: 8%;
+    }
+    
+    .board_information{
+        position: relative;
+        padding-top: 51px;
+        width: 100%;
+        height: 90%;
+        background-color: #F0E0EC;
+        border: solid 3px #000;
+        border-radius: 35px;
+        box-shadow: 3px 3px 6px #000;
+        justify-content: center;
+    }
+    
+    #CV_information .board_information .text_name{
+        text-align: center;
+        font-size: 18px;
+        color: #631781;
+        text-transform: capitalize; 
+    }
+    
+    #CV_information .board_information .prof_title{
+        margin-top: 8px;
+        margin-bottom: 10px;
+        line-height: 16px;
+        text-align: center;
+        font-size: 16px;
+        color: #631781;
+        text-transform: capitalize; 
+    }
+    
+    #CV_information .board_information .intro_user{
+        width: 90%;
+        max-height: 143px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5%;
+        margin-top: 3%;
+        text-align: center;
+    }
+    
+    .line_{
+        position: absolute;
+        bottom: 182px;
+        width: 164px;
+        height: 2.78px;
+        border-top: dashed 3px #8C63A4 ;
+        opacity: 0.5;
+        margin: 0 60px;
+    }
+    
+    #contact{
+        position: absolute;
+        bottom: 19px;
+        height: 36%;
+        width: 100%;
+        border-radius: 50px;
+    }
+    
+    #contact .contact_element{
+        height: 25%;
+        width: 100%;
+        line-height: 47.6px;
+        padding: 0 20px;
+    }
+    
+    #contact .mail{
+        padding-right: unset;
+    }
+    
+    .ct{
+        max-width: 90%;
+        font-size: 14px;
+        display: inline-block;
+        padding: 0 12px;
+    }
+    
+    .address{
+        height: 25%;
+        position: relative;
+    }
+    
+    .ad_address{
+        position: absolute;
+        top: 13px;
+        max-width: 81%;
+        line-height: 1rem;
+        text-align: left;
+    }
+    
+    /* phan thong tin kinh nghiem lam viec */
+    #CV_exper{
+        position: relative;
+        padding-top: 46px;
+        padding-left: 42px;
+    }
+    
+    #CV_exper .infor_title_exper{
+        width: 56%;
+        background-color: #F0E0EC;
+        height: 7%;
+    }
+    
+    #CV_exper .pattern_decor{
+        position: absolute;
+        left: 50px;
+        top: 460px;
+        width: 221px;
+        height: 100px;
+    }
+    
+    #CV_exper .CV_exper_informations{
+        list-style-image: url("./assets/dotul.png");
+        resize: vertical;
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 12px;
+        padding-left: 12px;
+        margin-top: 12px;
+        max-height: 370px;
+        line-height: 20px;
+    }
+    
+    #CV_exper .CV_exper_informations li{
+        margin-top: 12px;
+        text-shadow: 0.3px 0.3px #000;
+    }
+    
+    #CV_exper .CV_exper_informations li h1{
+        font-size: 15px;
+    }
+    
+    /* phần ô thông tin bên phải */
+    
+    .box_button{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        height: 32px;
+        width: 95px;
+        background-color: #F4F4BB;
+        border: solid 2px #000;
+        border-radius: 20px;
+        z-index: 3;
+    }
+    
+    .box_button .close_button{
+        position: absolute;
+        left: 60px;
+        top: 8px;
+        opacity: 0.9;
+    }
+    
+    .box_button .minimize_button{
+        position: absolute;
+        left: 21px;
+        top: 8px;
+        opacity: 0.9;
+    }
+    
+    .minimize_button, .close_button{
+        font-size: 15px;
+        font-weight: 900;
+    }
+    
+    #CV_infor img{
+        position: absolute;
+        z-index: 5;
+    }
+    
+    #CV_infor{
+        position: relative;
+        padding-left: 23px;
+        padding-top: 51px;
+    }
+    
+    #CV_infor .tangle_decor{
+        width: 60px;
+        height: 60px;
+        left: -10px;
+        top: 19px;
+    }
+    
+    #CV_infor .stars_decor{
+        left: 211px;
+        top: 17px;
+        width: 100px;
+        height: 90px;
+    }
+    
+    #CV_infor .square_decor{
+        right: 3px;
+        top: 47px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    #CV_infor .tangle_decor_under{
+        right: 5px;
+        bottom: 15px;
+        width: 60px;
+        height: 60px;
+        transform: rotate(58deg);
+    }
+    
+    #CV_infor .square_decor_under{
+        left: 9px;
+        bottom: 8px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    #CV_infor .main_information{
+        padding-top: 35px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        width: 95%;
+        height: 97%;
+        background-color: #F0E0EC;
+        border: solid 3px #000;
+        border-radius: 35px;
+        box-shadow: 3px 3px 6px #000;
+    }
+    
+    #CV_infor .main_information .infor_user{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        resize: vertical;
+        width: 100%;
+        min-height: 15%;
+        padding: 14px 35px 35px 42px;
+        padding-bottom: unset;
+    }
+    
+    
+    
+    .infor_title{
+        width: 48%;
+        height: 34px;
+        background-color: #B19CFF;
+        border-radius: 20px;
+        box-shadow: 4px 4px 3px #000;
+    }
+    
+    .infor_title h2{
+        position: absolute;
+        font-size: 18px;
+        padding-left: 16px;
+        line-height: 200%;
+        
+    }
+    
+    .infor_title .cicle_decor{
+        padding-bottom: 12px;
+        position: relative;
+        left: -17px;
+        top: -15px;
+        width: 20px;
+        height: 20px;
+        border: solid 3px #631781;
+        border-radius: 20px;
+        background-color: #FF7A01;
+        z-index: 2;
+    }
+    
+    .infor_title .line_decor{
+        position: relative;
+        left: -10px;
+        top: -22px;
+        width: 18px;
+        height: 5px;
+        background-color: #631781;
+        transform: rotate(217deg);
+        z-index: 1 !important;
+    }
+    
+    #CV_infor .infor_user .element_infor{
+        width: 100%;
+        padding: 12px 12px;
+        padding-left: 40px;
+        font-size: 14px;
+        line-height: 20px;
+        z-index: 15;
+        height: 15px;
+    }
+    
+    #CV_infor .CV_exper_informations{
+        list-style-image: url("./assets/dotul.png");
+        resize: vertical;
+        width: 106%;
+        font-size: 14px;
+        padding: 12px 12px 12px 5px;
+        margin-top: 12px;
+        max-height: 370px;
+        line-height: 20px;
+    }
+    
+    .main_information .infor_user .CV_exper_informations h1{
+        font-size: 15px;
+    }
+ } 
+
