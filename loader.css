@@ -1,7 +1,7 @@
 .loader {
-    border: 16px solid #f1d63e; 
-    border-top: 16px solid #e95216; 
-    border-bottom: 16px solid #e95216;
+    border: 16px solid #e95216; 
+    border-top: 16px solid #000000; 
+    border-bottom: 16px solid #f1d63e;
     border-radius: 90%;
     width: 100px;
     height: 100px;
@@ -12,5 +12,3 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
-  
