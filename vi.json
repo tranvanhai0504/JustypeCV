@@ -1,0 +1,37 @@
+{
+    "title_add_form": "Thêm ảnh của bạn",
+
+    "Name": "Họ và tên",
+    "prof_title": "Nhà phát triển",
+
+    "Position": "Chức vụ",
+
+    "Introduction": "Giới thiệu",
+
+    "CONTACT": "",
+
+    "Email": "Email",
+    "ct ad_mail": "Your mail",
+
+    "Phone": "SĐT",
+    "ct ad_phone": "Số điện toại của bạn",
+
+    "Day_of_birth": "Ngày sinh",
+    "ct ad_dayOfBirth": "Ngày sinh của bạn",
+
+    "Address": "Địa chỉ",
+    "ct ad_address": "Địa chỉ của bạn",
+
+    "Add_Experience": "Thêm kinh nghiệm",
+    "Add_Project": "Thêm dự án",
+    "Add_Certificates": "Thêm chứng chỉ",
+    "Add_Achiements": "Thêm thành tích",
+    "Add_Skills": "Thêm kĩ năng",
+
+    "Experience": "Kinh nghiệm",
+    "Education": "Học vấn",
+    "Project": "Dự án",
+    "Certificates": "Chứng chỉ",
+    "Achiements": "Thành tích",
+    "Skills": "Kĩ năng"
+}

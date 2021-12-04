@@ -1,0 +1,37 @@
+{
+    "title_add_form": "Add your imagine",
+
+    "Name": "Name",
+    "prof_title": "Developer",
+
+    "Position": "Position",
+
+    "Introduction": "Introduction",
+
+    "CONTACT": "CONTACT",
+
+    "Email": "Email",
+    "ct ad_mail": "Your mail",
+
+    "Phone": "Phone",
+    "ct ad_phone": "Your phone number",
+
+    "Day_of_birth": "Day of birth",
+    "ct ad_dayOfBirth": "Your day of birth",
+
+    "Address": "Address",
+    "ct ad_address": "Your address",
+
+    "Add_Experience": "Add Experience",
+    "Add_Project": "Add Project",
+    "Add_Certificates": "Add Certificates",
+    "Add_Achiements": "Add Achiements",
+    "Add_Skills": "Add Skills",
+
+    "Experience": "Experience",
+    "Education": "Education",
+    "Project": "Project",
+    "Certificates": "Certificates",
+    "Achiements": "Achiements",
+    "Skills": "Skills"
+}
