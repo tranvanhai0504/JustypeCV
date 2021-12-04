@@ -960,7 +960,7 @@ h6{
 }
 
 .button_turnback{
-    padding-left: 50px;
+    padding-left: 110px;
     position: fixed;
     flex-direction: column;
     top: -52px;
@@ -974,7 +974,7 @@ h6{
 }
 
 .button_turnback:hover{
-    background-color: rgba(87, 80, 80, 0.199);
+    background-color: rgba(177, 156, 255, 0.582);
 }
 
 .button_turnback_real{
@@ -986,10 +986,11 @@ h6{
     width: 50px;
     height: 70px;
     border-radius: 0 50px 50px 0;
-    background-color: rgba(87, 80, 80, 0.199);;
+    background-color: rgba(177, 156, 255, 0.582);
 }
 
 .fa-angle-right{
+    color: #FF7A01;
     font-size: 90px;
     line-height: 70px !important;
 }
@@ -1004,7 +1005,10 @@ h6{
     -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
-
+.fa-eye-slash{
+    color: #FF7A01;
+    font-size: 100px;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -1455,6 +1459,17 @@ input[type=number] {
 
   
  @media print {
+
+    @page{
+        size: A4;
+        margin: 0 !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+        color-adjust: exact !important;  /*Firefox*/
+    }
+
      #intro_web, #table_add_infor, .button_turnback{
          position: unset;
          display: none !important;

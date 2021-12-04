@@ -22,24 +22,23 @@ $(document).ready(function(){
         $(".input_name").delay(1200).slideUp()
         $(".input_prof").delay(1200).slideUp()
         $("#intro_web").delay(1800).fadeOut("slow", function(){
-            $(".text_name").text($(".input_name").val());
-            $(".prof_title").text($(".input_prof").val());
-            $("p").empty(".ct");
-            $(".CV_exper_informations li").remove()
-            $(".ad_mail").text("Your mail")
-            $(".ad_phone").text("Your phone number")
-            $(".ad_dayOfBirth").text("Your day of birth")
-            $(".ad_address").text("Your address")
-            $("#CV").delay(500).animate({left: '250px'})
-            $("#table_add_infor").delay(700).fadeIn()
-        });
+            $("#CV").addClass("scale-down-center")
+            window.scrollTo({top:235,behavior:'smooth'});
+            $("#CV").delay(2000).animate({left: '250px'}, 500, function(){
+                $("#CV").addClass("scale-up-center")
+                window.scrollTo({top:0,behavior:'smooth'});
+                $("#CV").removeClass("scale-down-center")
+                $("#table_add_infor").delay(700).fadeIn()
+                $("p").empty(".ct");
+                $(".CV_exper_informations li").remove()
+                $(".ad_mail").text("Your mail")
+                $(".ad_phone").text("Your phone number")
+                $(".ad_dayOfBirth").text("Your day of birth")
+                $(".ad_address").text("Your address")
+            })    
+        })
     })
 })
-
-var save = function(){
-    $(".table_1").css("display", "block")
-    $("html").css("zoom", "67%")
-}
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -362,48 +361,9 @@ $(document).on("click", ".dataid",function(){
 });
 
 
-// $(document).ready(function(){
-//     var areaCV = document.getElementById('CV');
-//     var buttonDownl = document.querySelector('.print_cv');
-//     console.log(areaCV)
-//     console.log(buttonDownl)
-
-//     let opt = {
-//         margin:       0,
-//         filename:     'JusTypeCV.pdf',
-//         image:        { type: 'jpeg', quality: 1 },
-//         html2canvas:  { scale: 2 },
-//         jsPDF:        { unit: 'px', format: 'a4', orientation: 'portrait' }
-//       };
-
-//     function taoCV(){
-//         html2pdf(areaCV, opt)
-//     }
-    
-//     function themClass(){
-//         $("#CV").addClass("class_in")
-//     }
-
-//     function xoaClass(){
-//         $("#CV").remove("class_in")
-//     }
-
-//     buttonDownl.addEventListener('click', function(){
-//         themClass()
-//         taoCV()
-//         xoaClass()
-//     })
-// })
-
 
 
 $(document).on("click", ".print_cv", function(){
-    window.print().save()
-
-    // function loadPrint() {
-    //     window.print();
-    //     setTimeout(function () { window.close(); }, 100);
-    // }
-
-    // loadPrint()
+    window.print()
 })
+
