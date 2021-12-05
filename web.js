@@ -31,12 +31,10 @@ $(document).ready(function(){
                 $("#table_add_infor").delay(700).fadeIn()
                 $("p").empty(".ct");
                 $(".CV_exper_informations li").remove()
-                $(".ad_mail").text("Email")
-                $(".ad_phone").text("Phone number")
-                $(".ad_dayOfBirth").text("Day of birth")
-                $(".ad_address").text("Address")
-                $("#menu").fadeIn()
-                $(".div_around").fadeIn()
+                $(".ad_mail").text("Your mail")
+                $(".ad_phone").text("Your phone number")
+                $(".ad_dayOfBirth").text("Your day of birth")
+                $(".ad_address").text("Your address")
             })    
         })
     })
@@ -65,13 +63,13 @@ $(document).ready(function(){
     $(".input_name_infor").focusin(function(){
         $(this).next().animate({
             height : '+=1.5px',
-            width : '+=25px'
+            width : '+=50px'
         }, 200)
     })
     $(".input_name_infor").focusout(function(){
         $(this).next().animate({
             height : '-=1.5px',
-            width : '-=25px'
+            width : '-=50px'
         }, 200)
     })
 })
@@ -80,13 +78,13 @@ $(document).ready(function(){
     $(".input_contact_infor").focusin(function(){
         $(this).next().animate({
             height : '+=1px',
-            width : '+=25px'
+            width : '+=50px'
         }, 200)
     })
     $(".input_contact_infor").focusout(function(){
         $(this).next().animate({
             height : '-=1px',
-            width : '-=25px'
+            width : '-=50px'
         }, 200)
     })
 })
@@ -117,12 +115,12 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".numberPhone").keyup(function(){
-        $(".ad_phone").text($(".numberPhone").val())
+        $(".ad_phone").text("+84 " + $(".numberPhone").val())
     })
 })
 
 $(document).ready(function(){
-    $(".DoB").focusout(function(){
+    $(".DoB").keyup(function(){
         $(".ad_dayOfBirth").text($(".DoB").val())
     })
 })
@@ -170,7 +168,6 @@ $(document).ready(function(){
     })
 })
 
-
 var i = 0;
 var j = 0;
 var l = 0;
@@ -178,32 +175,21 @@ var k = 0;
 var h = 0;
 var g = 0;
 
-var test, month, year, test2, month2, year2, day;
-
 function append1(){
-    test = new Date(document.getElementById("add_infor_input_exper_date_st").value)
-    month = test.getMonth() + 1;
-    year = test.getFullYear()
-    test2 = new Date(document.getElementById("add_infor_input_exper_date_en").value)
-    month2 = test2.getMonth() + 1;
-    year2 = test2.getFullYear()
-    val1 = 'l-' + i;
+    var val1 = 'l-' + i;
     let tx1 = $("<li></li>").attr("id", val1)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_exper").val())
     let tx3 = $("<p></p>").text($("#add_infor_input_exper").val())
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val1)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_exper").val())
-    let tx7 = $("<p></p>").text("(" + month + "/" + year + " to " + month2 + "/" + year2 + ")")
     if($("#add_infor_input_title_exper").val() != ""){
         $("#CV_exper .CV_exper_informations").append(tx1)
-        $("#CV_exper .CV_exper_informations li:last-child").append(tx2, tx7)
+        $("#CV_exper .CV_exper_informations li:last-child").append(tx2)
         $(".Experience").after(tx4)
         $(".Experience+div").append(tx6, tx5)
         $(".form_add_element_exper").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_exper").val("")
-        $("#add_infor_input_exper_date_st").val("")
-        $("#add_infor_input_exper_date_en").val("")
         if($("#add_infor_input_exper").val() != ""){
             $("#CV_exper .CV_exper_informations li:last-child").append(tx3)
             $("#add_infor_input_exper").val("")
@@ -213,12 +199,6 @@ function append1(){
 }
 
 function append2(){
-    test = new Date(document.getElementById("add_infor_input_edu_date_st").value)
-    month = test.getMonth() + 1;
-    year = test.getFullYear()
-    test2 = new Date(document.getElementById("add_infor_input_edu_date_en").value)
-    month2 = test2.getMonth() + 1;
-    year2 = test2.getFullYear()
     var val2 = 'm-' + j;
     let tx1 = $("<li></li>").attr("id", val2)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_edu").val())
@@ -226,16 +206,13 @@ function append2(){
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val2)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_edu").val())
-    let tx7 = $("<p></p>").text("(" + month + "/" + year + " to " + month2 + "/" + year2 + ")")
     if($("#add_infor_input_title_edu").val() != ""){
         $("#CV_edu").append(tx1)
-        $("#CV_edu li:last-child").append(tx2, tx7)
+        $("#CV_edu li:last-child").append(tx2)
         $(".Education").after(tx4)
         $(".Education+div").append(tx6, tx5)
         $(".form_add_element_edu").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_edu").val("")
-        $("#add_infor_input_edu_date_st").val("")
-        $("#add_infor_input_edu_date_en").val("")
         if($("#add_infor_input_edu").val() != ""){
             $("#CV_edu li:last-child").append(tx3)
             $("#add_infor_input_edu").val("")
@@ -245,12 +222,6 @@ function append2(){
 }
 
 function append3(){
-    test = new Date(document.getElementById("add_infor_input_pro_date_st").value)
-    month = test.getMonth() + 1;
-    year = test.getFullYear()
-    test2 = new Date(document.getElementById("add_infor_input_pro_date_en").value)
-    month2 = test2.getMonth() + 1;
-    year2 = test2.getFullYear()
     var val3 = 'n-' + l;
     let tx1 = $("<li></li>").attr("id", val3)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_pro").val())
@@ -258,16 +229,13 @@ function append3(){
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val3)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_pro").val())
-    let tx7 = $("<p></p>").text("(" + month + "/" + year + " to " + month2 + "/" + year2 + ")")
     if($("#add_infor_input_title_pro").val() != ""){
         $("#CV_pro").append(tx1)
-        $("#CV_pro li:last-child").append(tx2, tx7)
+        $("#CV_pro li:last-child").append(tx2)
         $(".Project").after(tx4)
         $(".Project+div").append(tx6, tx5)
         $(".form_add_element_pro").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_pro").val("")
-        $("#add_infor_input_pro_date_st").val("")
-        $("#add_infor_input_pro_date_en").val("")
         if($("#add_infor_input_pro").val() != ""){
             $("#CV_pro li:last-child").append(tx3)
             $("#add_infor_input_pro").val("")
@@ -277,10 +245,6 @@ function append3(){
 }
 
 function append4(){
-    test = new Date(document.getElementById("add_infor_input_cert_date").value)
-    month = test.getMonth() + 1;
-    year = test.getFullYear()
-    day = test.getDay()
     var val4 = 'k-'+k;
     let tx1 = $("<li></li>").attr("id", val4)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_cert").val())
@@ -288,15 +252,13 @@ function append4(){
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val4)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_cert").val())
-    let tx7 = $("<p></p>").text("(" + day + "/" + month + "/" + year + ")")
     if($("#add_infor_input_title_cert").val() != ""){
         $("#CV_cert").append(tx1)
-        $("#CV_cert li:last-child").append(tx2, tx7)
+        $("#CV_cert li:last-child").append(tx2)
         $(".Certificates").after(tx4)
         $(".Certificates+div").append(tx6, tx5)
         $(".form_add_element_cert").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_cert").val("")
-        $("#add_infor_input_cert_date").val("")
         if($("#add_infor_input_cert").val() != ""){
             $("#CV_cert li:last-child").append(tx3)
             $("#add_infor_input_cert").val("")
@@ -307,10 +269,6 @@ function append4(){
 
 
 function append5(){
-    test = new Date(document.getElementById("add_infor_input_achi_date").value)
-    month = test.getMonth() + 1;
-    year = test.getFullYear()
-    day = test.getDay()
     var val5 = 'o-'+h;
     let tx1 = $("<li></li>").attr("id", val5)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_achi").val())
@@ -318,15 +276,13 @@ function append5(){
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val5)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_achi").val())
-    let tx7 = $("<p></p>").text("(" + day + "/" + month + "/" + year + ")")
     if($("#add_infor_input_title_achi").val() != ""){
         $("#CV_achi").append(tx1)
-        $("#CV_achi li:last-child").append(tx2, tx7)
+        $("#CV_achi li:last-child").append(tx2)
         $(".Achiements").after(tx4)
         $(".Achiements+div").append(tx6, tx5)
         $(".form_add_element_achi").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_achi").val("")
-        $("#add_infor_input_achi_date").val("")
         if($("#add_infor_input_achi").val() != ""){
             $("#CV_achi li:last-child").append(tx3)
             $("#add_infor_input_achi").val("")
@@ -336,47 +292,30 @@ function append5(){
 }
 
 function append6(){
-    var val8
-    var val7 = document.getElementById("list_skills_level").value 
-    if(val7 == 'Beginer'){
-        val8 = '25%'
-    }else if(val7 == 'Intermediate'){
-        val8 = '50%'
-    }else if(val7 == 'Advanced level'){
-        val8 = '75%'
-    }else{
-        val8 = '95%'
-    }
     var val6 = 'p-'+g;
     let tx1 = $("<li></li>").attr("id", val6)
     let tx2 = $("<h1></h1>").text($("#add_infor_input_title_ski").val())
+    let tx3 = $("<p></p>").text($("#add_infor_input_ski").val())
     let tx4 = $("<div></div>").attr("class", "tag_add")
     let tx5 = $("<i></i>").attr("class", "fas fa-times dataid").attr("data", val6)
     let tx6 = $("<h1></h1>").text($("#add_infor_input_title_ski").val())
-    var tx7 = $("<div></div>").attr("class", "bar_inside").width(val8)
-    let tx8 = $("<div></div>").attr("class", "bar_outside")
     if($("#add_infor_input_title_ski").val() != ""){
         $("#CV_ski").append(tx1)
-        $("#CV_ski li:last-child").append(tx2, tx8)
-        $("#CV_ski li:last-child .bar_outside").append(tx7)
+        $("#CV_ski li:last-child").append(tx2)
         $(".Skills").after(tx4)
         $(".Skills+div").append(tx6, tx5)
         $(".form_add_element_ski").children().not("div.tag_add").not(".button_submit_add").css("display", "none")
         $("#add_infor_input_title_ski").val("")
-        $("#add_infor_input_ski_date").val("")
-        $("#list_skills_level").val("")
+        if($("#add_infor_input_ski").val() != ""){
+            $("#CV_ski li:last-child").append(tx3)
+            $("#add_infor_input_ski").val("")
+        }
     }
     g++;
 }
 
 $(document).ready(function(){
     $(".review_cv").click(function(){
-        $("#menu").fadeOut()
-        $(".div_around").fadeOut()
-        $(".button_menu_bar").css({
-            height : "0",
-            top: "668px"
-        })
         $("#CV").removeClass("scale-up-center")
         $("#table_add_infor").animate({left : "-2000px"}, 300)
         $("#CV").delay(400).animate({left: "0"}, 500, function(){
@@ -402,8 +341,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".button_turnback").click(function(){
-        $("#menu").fadeIn()
-        $(".div_around").fadeIn()
         $(".button_turnback").css("display", "none")
         $(".button_turnback_real").css("display", "none")
         $("#CV").addClass("scale-up-center")
@@ -423,48 +360,14 @@ $(document).on("click", ".dataid",function(){
     $(this).parent().remove()
 });
 
-
 $(document).on("click", ".print_cv", function(){
     window.print()
 })
 
-$(document).ready(function(){
-    $("#menu").click(function(){
-        if($(".button_menu_bar").height() == '0' ){
-            $(".button_menu_bar").animate({
-                height: '250px',
-                top: '450px'
-            })
-        }else{
-            $(".button_menu_bar").animate({
-                height: '0',
-                top: '668px'
-            }, 100)
-        }
-    })
-})
-
-$(document).ready(function(){
-    $(".remove_CV").click(function(){
-        $("#table_warning").fadeIn()
-    })
-})
-
-$(document).ready(function(){
-    $(".button_cancel").click(function(){
-        $("#table_warning").fadeOut()
-    })
-})
-
-$(document).ready(function(){
-    $(".button_conti").click(function(){
-        $(".prof_title").text("")
-        $(".intro_user").text("")
-        $(".ct").text("")
-        $(".CV_exper_informations").empty()
-        $("#table_warning").fadeOut()
-        $(".tag_add").remove()
-        $(".input_name_infor").not($(".name")).val("")
-        $(".input_contact_infor").val("")
-    })
+$(window).on('load',function(){
+    if ($('#loader').length) {
+        $('#loader').delay(300).fadeOut('slow', function () {
+            $(this).remove();
+        });
+    }
 })
